@@ -59,6 +59,7 @@
     "es6-promise": "^4.2.8",
     "isomorphic-fetch": "^2.2.1",
     "query-string": "^5.1.1",
+    "svelte-routing": "^1.4.2",
     "whatwg-fetch": "^3.0.0"
   }
 }

@@ -28,4 +28,24 @@
     position: absolute;
     margin-top: 75px;
   }
+  &__main {
+    font-size: 50px;
+    color: #ffffff;
+    margin: 1%;
+    margin-top: inherit;
+  }
+  &__login {
+    margin: 0 .15em;
+    width: 4em;
+    height: 1em;
+    padding: .2em .4em .3em;
+    border-radius: var(--border-r);
+    line-height: 1;
+    box-sizing: content-box;
+    color: #888;
+    border: 1px solid var(--back-light);
+  }
+  &__login:hover { background: rgb(232,95,76); } /* при наведении курсора мышки */
+  &__login:active { background: rgb(152,15,0); } /* при нажатии */
+
 }
