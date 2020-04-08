@@ -1,5 +1,19 @@
-   <style src="./style.scss">
+<script>
+    import { navigate } from "svelte-routing";
 
-   </style>
+    function logout() {
+      localStorage.removeItem('token');
+      navigate("/login", { replace: true });
+    }
 
-<div class="home"></div>
+</script>
+
+<style src="./style.scss">
+
+</style>
+
+<div class="home">
+    <button on:click={logout} type="submit">
+         Выйти
+    </button>
+</div>
