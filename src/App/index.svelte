@@ -1,8 +1,9 @@
 <script>
 
+    import { Router, Link, Route } from "svelte-routing";
     import Layout from '@Components/Layout';
-    import ImageExample from '@Components/ImageExample';
-    import HelloWorld from '@Components/HelloWorld';
+    import Login from '@Components/Login';
+    import Home from '@Components/Home';
 
 
 </script>
@@ -12,14 +13,18 @@
 
 </style>
 
-<Layout>
-    <div class="container">
-        <div class="container__top">
-            <ImageExample />
-        </div>
-        <div class="container__middle">
-            <HelloWorld />
-        </div>
+<Router>
+  <nav>
+    <Link to="/">Home</Link>
+    <Link to="/login">Login</Link>
+  </nav>
+  <Layout>
+      <div class="container">
+          <Route path="/"><Home /></Route>
+          <Route path="/login"><Login /></Route>
+      </div>
+  </Layout>
 
-    </div>
-</Layout>
+</Router>
+
+

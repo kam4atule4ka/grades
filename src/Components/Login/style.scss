@@ -1,4 +1,4 @@
-.title {
+.login {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -8,10 +8,11 @@
   z-index: 1;
   text-align: center;
 
+
   &__top {
-    font-size: 110px;
-    color: #ffffff;
-    margin: 0 0 10px;
+      font-size: 110px;
+      color: #ffffff;
+      margin: 0 0 10px;
   }
 
   &__back {
@@ -21,18 +22,31 @@
     line-height: 86px;
   }
 
-  &__front {
-    color: #ffffff;
-    font-size: 80px;
-    font-weight: 500;
-    position: absolute;
-    margin-top: 75px;
-  }
   &__main {
     font-size: 50px;
     color: #ffffff;
-    margin: 0 0 150px;
-    margin-top: 0px;
+    margin: 1%;
+    margin-top: inherit;
   }
+  &__button {
+    margin: 0 .15em;
+    width: 4em;
+    height: 2em;
+    padding: .2em .4em .3em;
+    border-radius: var(--border-r);
+    line-height: 1;
+    box-sizing: content-box;
+    color: #888;
+    border: 1px solid var(--back-light);
+    &:hover { background: rgb(232,95,76); } /* при наведении курсора мышки */
+    &:active { background: rgb(12, 152, 5); } /* при нажатии */
+  }
+  &__input {
+    background: green;
+  }
+  .input {
+    background: blue;
+  }
+
 
 }
