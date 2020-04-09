@@ -26,7 +26,7 @@
     <div class="login__top"><ImageExample /></div>
     <form class="login__main" on:submit|preventDefault={submit}>
 
-       <input class="login__input" bind:value={login} type=text placeholder="Логин" required />
+       <input class="login__input" bind:value={login} type=text placeholder="Логин" required/>
        <input class="login__input" bind:value={password} type=password placeholder="Пароль" required />
        <button class="login__button" type="submit">
          Войти
