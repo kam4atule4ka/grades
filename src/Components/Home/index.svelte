@@ -5,20 +5,13 @@
       localStorage.removeItem('token');
       navigate("/login", { replace: true });
     }
+    let competitors = [];
     function getList () {
         fetch('/list', {method:'GET'}).then(function(data) {
 
-            const competitors = JSON.stringify(data.body);
-            console.log(competitors);
-            for (var i = 0; i < competitors.length; i++) {
-                var name = competitors[i].name;
-                var cvUrl = competitors[i].cvUrl;
-//        let table = document.write('<tr className="mess-hide"><td className="name"><h4>' + name + '</h4></td><td className="song"><h4>' + cvUrl +  '</h4></td></tr>');
-            }
-//        document.write('</table></div>');
-        });
-    }
-
+            competitors = data.body;
+            console.log(competitors);})
+}
 </script>
 
 <style src="./style.scss">
@@ -30,7 +23,14 @@
 
 </div>
 <div class="show">
-
+<ul>
+	{#each competitors as competitor}
+		<li>
+			{competitor.name}
+			{competitor.cvUrl}
+		</li>
+	{/each}
+</ul>
     <button on:click={getList} type="button">
          Показать
     </button>
