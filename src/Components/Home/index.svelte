@@ -1,41 +1,52 @@
 <script>
     import { navigate } from "svelte-routing";
-
+    let competitors = [];
     function logout() {
       localStorage.removeItem('token');
       navigate("/login", { replace: true });
     }
-    let competitors = [];
+
     function getList () {
         fetch('/list', {method:'GET'}).then(function(data) {
 
             competitors = data.body;
             console.log(competitors);})
 }
+    function reset() {
+        competitors = [];
+    }
 </script>
 
 <style src="./style.scss">
 
 </style>
 
-<div class="list">
-
-
-</div>
-<div class="show">
-<ul>
+<div class="home__list">
+{#if competitors !=0}
+<div>
 	{#each competitors as competitor}
-		<li>
-			{competitor.name}
-			{competitor.cvUrl}
-		</li>
+		<table>
+		  <tr>
+            <td>{competitor.name}</td>
+            <td>{competitor.cvUrl}</td>
+          </tr>
+		</table>
 	{/each}
-</ul>
+</div>
+{:else}
+	<p>Ничегошеньки нет!</p>
+{/if}
+</div>
+<div class="home__button">
+
     <button on:click={getList} type="button">
          Показать
     </button>
+    <button on:click={reset} type="button">
+         Очистить
+    </button>
 </div>
-<div class="home">
+<div class="home__button">
     <button on:click={logout} type="submit">
          Выйти
     </button>

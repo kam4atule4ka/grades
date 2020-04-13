@@ -29,7 +29,10 @@ window.fetch = function (url, opts) {
             ok({'token':'mimimi'});
         }
         function getList(props) {
-            ok([{"name": "1","cvUrl": "42"}, {"name": "2","cvUrl": "universe"}]);
+            ok([{"name": "Who","cvUrl": "Douglas Adams"}, {"name": "What","cvUrl": "Don't panic"}, {"name": "42","cvUrl": "The Answer"}, {"name": "Answer to the Ultimate Question","cvUrl": "of Life, the Universe, and Everything"}]);
+        }
+        function getCompetitor(props) {
+            ok([{"name": "Douglas","status": "is not panicking", }]);
         }
 
     });
