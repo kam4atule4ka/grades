@@ -5,7 +5,7 @@
   &__list{
     table {
       //border-collapse: collapse;
-      background: 000px;
+      background: ghostwhite;
       border: 4px;
       cellpasing: 10px;
       width: 100%;
@@ -15,10 +15,12 @@
       padding: 2px;
       border: 2px solid black;
       width: 50%;
+      text-decoration-color: #034d07;
     }
     tr {
       padding: 2px;
       border: 2px solid black;
+      text-decoration-color: #034d07;
     }
   }
 

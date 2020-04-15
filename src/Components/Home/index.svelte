@@ -3,7 +3,7 @@
     let competitors = [];
     function logout() {
       localStorage.removeItem('token');
-      navigate("/login", { replace: true });
+      navigate('/login/', { replace: true });
     }
 
     function getList () {
@@ -14,7 +14,13 @@
 }
     function reset() {
         competitors = [];
+        console.log(competitors);
     }
+
+    function goToCompetitorById(id, phone) {
+        navigate(`/competitor/${id}/${phone}`);
+    }
+
 </script>
 
 <style src="./style.scss">
@@ -22,17 +28,15 @@
 </style>
 
 <div class="home__list">
-{#if competitors !=0}
-<div>
-	{#each competitors as competitor}
-		<table>
-		  <tr>
+{#if competitors.length !== 0}
+    <table>
+        {#each competitors as competitor}
+		  <tr on:click={()=> goToCompetitorById(competitor.id, competitor.phone)}>
             <td>{competitor.name}</td>
             <td>{competitor.cvUrl}</td>
           </tr>
-		</table>
-	{/each}
-</div>
+        {/each}
+    </table>
 {:else}
 	<p>Ничегошеньки нет!</p>
 {/if}

@@ -22,6 +22,9 @@ window.fetch = function (url, opts) {
                 case url.endsWith('/list') && method === 'GET':
                     return getList(props);
                     break;
+                case url.endsWith('/competitor') && method === 'GET':
+                    return getCompetitor(props);
+                    break;
             }
         }
 
@@ -29,10 +32,10 @@ window.fetch = function (url, opts) {
             ok({'token':'mimimi'});
         }
         function getList(props) {
-            ok([{"name": "Who","cvUrl": "Douglas Adams"}, {"name": "What","cvUrl": "Don't panic"}, {"name": "42","cvUrl": "The Answer"}, {"name": "Answer to the Ultimate Question","cvUrl": "of Life, the Universe, and Everything"}]);
+            ok([{"id": 1, "name": "Who","cvUrl": "Douglas Adams", "phone": 424242}, {"id": 2, "name": "What","cvUrl": "Don't panic", "phone": 424242}, {"id": 3, "name": "42","cvUrl": "The Answer", "phone": 424242}, {"id": 4, "name": "Answer to the Ultimate Question","cvUrl": "of Life, the Universe, and Everything", "phone": 424242}]);
         }
         function getCompetitor(props) {
-            ok([{"name": "Douglas","status": "is not panicking", }]);
+            ok([{"id": 1, "name": "Douglas","status": "is not panicking", "phone": 424242 }]);
         }
 
     });
