@@ -18,7 +18,7 @@
       <div class="container">
           <Route path="/"><PrivateRoute><Home /></PrivateRoute></Route>
           <Route path="/login"><Login /></Route>
-          <Route path="/competitor/:id/:phone" let:params><Competitor id="{params.id}" phone="{params.phone}"/></Route>
+          <Route path="/competitor/:id" let:params><Competitor id="{params.id}"/></Route>
       </div>
   </Layout>
 

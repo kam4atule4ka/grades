@@ -7,18 +7,17 @@
     }
 
     function getList () {
-        fetch('/list', {method:'GET'}).then(function(data) {
-
+        fetch('/competitor/list', {method:'GET'}).then(function(data) {
             competitors = data.body;
-            console.log(competitors);})
-}
-    function reset() {
-        competitors = [];
-        console.log(competitors);
+        })
     }
 
-    function goToCompetitorById(id, phone) {
-        navigate(`/competitor/${id}/${phone}`);
+    function reset() {
+        competitors = [];
+    }
+
+    function goToCompetitorById(id) {
+        navigate(`/competitor/${id}`);
     }
 
 </script>
@@ -31,7 +30,7 @@
 {#if competitors.length !== 0}
     <table>
         {#each competitors as competitor}
-		  <tr on:click={()=> goToCompetitorById(competitor.id, competitor.phone)}>
+		  <tr on:click={()=> goToCompetitorById(competitor.id)}>
             <td>{competitor.name}</td>
             <td>{competitor.cvUrl}</td>
           </tr>

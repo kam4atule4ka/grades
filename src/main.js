@@ -19,23 +19,29 @@ window.fetch = function (url, opts) {
                 case url.endsWith('/login') && method === 'POST':
                     return login(props);
                     break;
-                case url.endsWith('/list') && method === 'GET':
+                case url.endsWith('/competitor/list') && method === 'GET':
                     return getList(props);
                     break;
-                case url.endsWith('/competitor') && method === 'GET':
+                case /\/competitor\/(.*)$/g.test(url) && method === 'GET':
                     return getCompetitor(props);
                     break;
             }
         }
 
+        const list = [{"id": 1, "name": "Who","cvUrl": "Douglas Adams", "phone": 424242}, {"id": 2, "name": "What","cvUrl": "Don't panic", "phone": 2424}, {"id": 3, "name": "42","cvUrl": "The Answer", "phone": 123}, {"id": 4, "name": "Answer to the Ultimate Question","cvUrl": "of Life, the Universe, and Everything", "phone": 987}];
+
         function login(props) {
             ok({'token':'mimimi'});
         }
         function getList(props) {
-            ok([{"id": 1, "name": "Who","cvUrl": "Douglas Adams", "phone": 424242}, {"id": 2, "name": "What","cvUrl": "Don't panic", "phone": 424242}, {"id": 3, "name": "42","cvUrl": "The Answer", "phone": 424242}, {"id": 4, "name": "Answer to the Ultimate Question","cvUrl": "of Life, the Universe, and Everything", "phone": 424242}]);
+            ok(list);
         }
         function getCompetitor(props) {
-            ok([{"id": 1, "name": "Douglas","status": "is not panicking", "phone": 424242 }]);
+            const id = url.match(/\/competitor\/(.*)$/g)[0].slice(-1);
+            const result = list.find(function (item) {
+                return item.id === Number(id);
+            })
+            ok(result);
         }
 
     });
