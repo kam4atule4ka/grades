@@ -12,6 +12,7 @@
     function submit () {
         fetch('/login', {method:'POST', props:{login, password}}).then(function(data) {
             localStorage.setItem('token', data.body.token);
+            console.log(login, password)
             navigate('/');
         });
     }

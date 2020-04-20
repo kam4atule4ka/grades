@@ -1,6 +1,15 @@
 <script>
     import { navigate } from "svelte-routing";
+    import { onMount } from 'svelte';
+
     let competitors = [];
+
+    onMount(function () {
+        fetch('/competitor/list', {method:'GET'}).then(function(data) {
+            competitors = data.body;
+        })
+    });
+
     function logout() {
       localStorage.removeItem('token');
       navigate('/login/', { replace: true });
