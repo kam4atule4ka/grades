@@ -32,13 +32,16 @@
 
 </style>
 
-<div>
+<div class = "competitor">
 {#if comp != null}
     <form on:submit|preventDefault={change}>
         <input bind:value={name} type=text  required/>
         <input bind:value={phone} type=text required/>
-        <button type="submit">Сохранить</button>
+        <p></p>
+        <button class="competitor__button" type="submit">Сохранить</button>
     </form>
+    {comp.cvUrl}
+    {comp.comments}
     <button on:click={back}>Назад</button>
 {:else}
     <p> Loading </p>

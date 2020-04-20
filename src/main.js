@@ -3,7 +3,7 @@ import "@babel/polyfill";
 import App from './App/index.svelte';
 import './Assets/css/global.css';
 
-let list = [{"id": 1, "name": "Who","cvUrl": "Douglas Adams", "phone": 424242}, {"id": 2, "name": "What","cvUrl": "Don't panic", "phone": 2424}, {"id": 3, "name": "42","cvUrl": "The Answer", "phone": 123}, {"id": 4, "name": "Answer to the Ultimate Question","cvUrl": "of Life, the Universe, and Everything", "phone": 987}];
+let list = [{"id": 1, "name": "Who","cvUrl": "Douglas Adams", "phone": 424242, "comments": [{"id": 1, "text": "First comment"}, {"id": 2, "text": "Second comment"}]}, {"id": 2, "name": "What","cvUrl": "Don't panic", "phone": 2424}, {"id": 3, "name": "42","cvUrl": "The Answer", "phone": 123}, {"id": 4, "name": "Answer to the Ultimate Question","cvUrl": "of Life, the Universe, and Everything", "phone": 987}];
 
 window.fetch = function (url, opts) {
     const {method, props} = opts;

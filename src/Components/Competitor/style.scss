@@ -1,4 +1,17 @@
-.card {
+.competitor {
   font-family: Arial, Helvetica, sans-serif;
-  width: 50px;
+
+  &__button {
+    position: relative;
+    margin: 0 .15em;
+    width: 4em;
+    height: 2em;
+    padding: .2em .4em .3em;
+    border-radius: var(--border-r);
+    line-height: 1;
+    box-sizing: content-box;
+    color: #888;
+    border: 1px solid var(--back-light);
+  }
+
 }
