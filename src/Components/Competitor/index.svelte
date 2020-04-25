@@ -40,8 +40,7 @@
         <p></p>
         <button class="competitor__button" type="submit">Сохранить</button>
     </form>
-    {comp.cvUrl}
-    {comp.comments}
+    <p>{comp.cvUrl} {comp.comments}</p>
     <button on:click={back}>Назад</button>
 {:else}
     <p> Loading </p>
