@@ -1,0 +1,41 @@
+.image-content.svelte-1rddlcc{display:flex;align-items:center;justify-content:center}.image-content.svelte-1rddlcc .bg-image.svelte-1rddlcc{background-image:url(da5282b1f16b15f904d1eb286d2bc0ba.png);background-size:250px;background-repeat:no-repeat;height:300px;width:300px;margin-bottom:auto}
+@charset "UTF-8";.login.svelte-bp715r{font-family:Arial, Helvetica, sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:1;text-align:center}.login__top.svelte-bp715r{font-size:110px;color:#ffffff;margin:0 0 10px}.login__back.svelte-bp715r{color:rgba(255, 255, 255, 0.15);font-size:140px;font-weight:800;line-height:86px}.login__main.svelte-bp715r{font-size:50px;color:#ffffff;margin:1%;margin-top:inherit}.login__button.svelte-bp715r{margin:0 .15em;width:4em;height:2em;padding:.2em .4em .3em;border-radius:var(--border-r);line-height:1;box-sizing:content-box;color:#888;border:1px solid var(--back-light)}.login__button.svelte-bp715r:hover{background:#e85f4c}.login__button.svelte-bp715r:active{background:#0c9805}.login__input.svelte-bp715r{background:lightgreen}
+.home__list.svelte-79hqpj table.svelte-79hqpj{border-spacing:2px;background:ghostwhite;border:4px;width:100%;text-align:center}.home__list.svelte-79hqpj td.svelte-79hqpj{padding:2px;border:2px solid black;width:50%;-webkit-text-decoration-color:#034d07;text-decoration-color:#034d07}.home__list.svelte-79hqpj tr.svelte-79hqpj{padding:2px;border:2px solid black;-webkit-text-decoration-color:#034d07;text-decoration-color:#034d07}
+.competitor.svelte-hadxrr{font-family:Arial, Helvetica, sans-serif}.competitor__button.svelte-hadxrr{position:relative;margin:0 .15em;width:4em;height:2em;padding:.2em .4em .3em;border-radius:var(--border-r);line-height:1;box-sizing:content-box;color:#888;border:1px solid var(--back-light)}
+.container.svelte-10dguzu{background-color:#2f503a;display:flex;flex-direction:column;flex:1 1 100%;justify-content:flex-start;align-items:center;min-height:100vh}
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
