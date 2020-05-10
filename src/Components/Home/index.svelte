@@ -3,11 +3,10 @@
     import { onMount } from 'svelte';
 
     let competitors = [];
+    let search = '';
 
     onMount(function () {
-        fetch('/competitor/list', {method:'GET'}).then(function(data) {
-            competitors = data.body;
-        })
+        getList();
     });
 
     function logout() {
@@ -16,7 +15,7 @@
     }
 
     function getList () {
-        fetch('/competitor/list', {method:'GET'}).then(function(data) {
+        fetch(`/competitor/list`, {method:'GET', props: {search}}).then(function(data) {
             competitors = data.body;
         })
     }
@@ -28,6 +27,10 @@
     function goToCompetitorById(id) {
         navigate(`/competitor/${id}`);
     }
+    
+    function create() {
+        navigate(`/competitor/new`);
+    }
 
 </script>
 
@@ -37,6 +40,9 @@
 
 <div class="home__list">
 {#if competitors.length !== 0}
+    <div>
+        <input type="text" bind:value={search} placehorder="Search by name"/>
+    </div>
     <table>
         {#each competitors as competitor}
 		  <tr on:click={()=> goToCompetitorById(competitor.id)}>
@@ -56,6 +62,9 @@
     </button>
     <button on:click={reset} type="button">
          Очистить
+    </button>
+    <button on:click={create} type="button">
+         Создать
     </button>
 </div>
 <div class="home__button">
